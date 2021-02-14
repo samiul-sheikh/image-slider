@@ -121,3 +121,17 @@ searchBtn.addEventListener('click', function () {
 sliderBtn.addEventListener('click', function () {
     createSlider()
 })
+
+// keyboard handler for search button
+document.getElementById('search').addEventListener('keypress', function(event){
+    if(event.key == 'Enter'){
+        document.getElementById('search-btn').click();
+    }
+})
+
+// keyboard handler for slider button
+document.getElementById('duration').addEventListener('keypress', function(event){
+    if(event.key == 'Enter'){
+        document.getElementById('create-slider').click();
+    }
+})
