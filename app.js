@@ -19,6 +19,7 @@ const showImages = (images) => {
     gallery.innerHTML = '';
     // show gallery title
     galleryHeader.style.display = 'flex';
+    spinnerToggle(false);
     images.forEach(image => {
         let div = document.createElement('div');
         div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
@@ -29,6 +30,7 @@ const showImages = (images) => {
 }
 
 const getImages = (query) => {
+    spinnerToggle(true);
     fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
         .then(response => response.json())
         .then(data => showImages(data.hits))
@@ -135,3 +137,10 @@ document.getElementById('duration').addEventListener('keypress', function(event)
         document.getElementById('create-slider').click();
     }
 })
+
+// spinner loading images
+const spinnerToggle = show => {
+    const spinnerLoading = document.getElementById('spinner-loading');
+    const images = document.getElementById('image-container');
+    spinnerLoading.classList.toggle('d-none');
+}
