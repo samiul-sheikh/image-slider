@@ -8,9 +8,6 @@ const sliderContainer = document.getElementById('sliders');
 let sliders = [];
 
 
-// If this key doesn't work
-// Find the name in the url and go to their website
-// to create your own api key
 const KEY = '15674931-a9d714b6e9d654524df198e00&q';
 
 // show images 
@@ -125,15 +122,15 @@ sliderBtn.addEventListener('click', function () {
 })
 
 // keyboard handler for search button
-document.getElementById('search').addEventListener('keypress', function(event){
-    if(event.key == 'Enter'){
+document.getElementById('search').addEventListener('keypress', function (event) {
+    if (event.key == 'Enter') {
         document.getElementById('search-btn').click();
     }
 })
 
 // keyboard handler for slider button
-document.getElementById('duration').addEventListener('keypress', function(event){
-    if(event.key == 'Enter'){
+document.getElementById('duration').addEventListener('keypress', function (event) {
+    if (event.key == 'Enter') {
         document.getElementById('create-slider').click();
     }
 })
